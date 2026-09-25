@@ -1,6 +1,9 @@
 // ---------- FUNÇÃO DE PROTEÇÃO DE PÁGINA ----------
 // Chame esta função no topo de dashboard.html, agenda.html e clientes.html.
 // Se o usuário não estiver logado, redireciona para login.html.
+
+  new window.VLibras.Widget('https://vlibras.gov.br');
+
 function exigirLogin() {
   const dados = localStorage.getItem('usuarioLogado');
   if (!dados) {

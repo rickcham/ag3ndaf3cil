@@ -1041,3 +1041,8 @@ if (tabelaFaturas) {
     renderFaturas();
   }
 }
+
+// ---------- VLIBRAS ----------
+if (window.VLibras) {
+  new window.VLibras.Widget('https://vlibras.gov.br');
+}

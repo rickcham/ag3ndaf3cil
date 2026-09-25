@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Finanças — AgendaFácil</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="estilos/app.css">
+</head>
+<body class="pagina-app">
+
+  <div class="app-layout">
+
+    <aside class="sidebar">
+      <a href="dashboard.html" class="sidebar-logo">AgendaFácil</a>
+
+      <nav class="sidebar-menu">
+        <a href="dashboard.html" class="menu-item"><span class="menu-icone">▦</span> Dashboard</a>
+        <a href="agenda.html" class="menu-item"><span class="menu-icone">▤</span> Agenda</a>
+        <a href="clientes.html" class="menu-item"><span class="menu-icone">◉</span> Clientes</a>
+        <a href="financa.html" class="menu-item ativo"><span class="menu-icone">✦</span> Finanças</a>
+        <a href="suporte.html" class="menu-item"><span class="menu-icone">◆</span> Suporte</a>
+      </nav>
+
+      <button type="button" class="sidebar-sair" id="btn-sair">Sair</button>
+    </aside>
+
+    <div class="app-conteudo">
+
+      <header class="app-header">
+        <div>
+          <h1 class="app-titulo">Finanças</h1>
+          <p class="app-subtitulo">Gerencie sua assinatura e pagamentos.</p>
+        </div>
+
+        <nav class="abas" data-abas="financas">
+          <button type="button" class="aba ativa" data-aba="assinatura">Assinatura</button>
+          <button type="button" class="aba" data-aba="pagamentos">Pagamentos</button>
+        </nav>
+      </header>
+
+      <main class="app-main">
+
+        <section class="painel-aba ativo" data-painel="assinatura">
+
+          <div class="card-plano-atual compacto">
+            <div class="plano-atual-info">
+              <span class="plano-atual-selo">Plano atual</span>
+              <h2>Profissional</h2>
+              <p class="plano-atual-renovacao">Próxima cobrança em <strong>15 de novembro de 2024</strong>.</p>
+            </div>
+            <div class="plano-atual-acao">
+              <p class="plano-atual-preco"><strong>R$ 49</strong><span>/mês</span></p>
+              <button type="button" class="btn-secundario" id="btn-cancelar-assinatura">Cancelar assinatura</button>
+            </div>
+          </div>
+
+          <h2 class="titulo-secao">Planos disponíveis</h2>
+
+          <div class="grid-planos-app">
+            <article class="card-plano-app">
+              <h3>Gratuito</h3>
+              <p class="preco">R$ 0<span>/mês</span></p>
+              <ul>
+                <li>50 agendamentos/mês</li>
+                <li>1 profissional</li>
+              </ul>
+              <button type="button" class="btn-secundario" data-plano="Gratuito">Selecionar</button>
+            </article>
+
+            <article class="card-plano-app destaque">
+              <span class="selo">Plano atual</span>
+              <h3>Profissional</h3>
+              <p class="preco">R$ 49<span>/mês</span></p>
+              <ul>
+                <li>Agendamentos ilimitados</li>
+                <li>5 profissionais</li>
+              </ul>
+              <button type="button" class="btn-primario" disabled>Ativo</button>
+            </article>
+
+            <article class="card-plano-app">
+              <h3>Empresarial</h3>
+              <p class="preco">R$ 99<span>/mês</span></p>
+              <ul>
+                <li>Tudo do Profissional</li>
+                <li>Suporte prioritário</li>
+              </ul>
+              <button type="button" class="btn-secundario" data-plano="Empresarial">Selecionar</button>
+            </article>
+          </div>
+
+        </section>
+
+        <section class="painel-aba" data-painel="pagamentos">
+
+          <div class="layout-pagamentos">
+
+            <div class="coluna-cartoes">
+              <header class="bloco-cabecalho">
+                <h2>Formas de pagamento</h2>
+                <button type="button" class="btn-secundario btn-pequeno" id="btn-add-cartao">Adicionar</button>
+              </header>
+
+              <div class="grid-cartoes" id="grid-cartoes"></div>
+            </div>
+
+            <div class="coluna-faturas">
+              <header class="bloco-cabecalho">
+                <h2>Histórico</h2>
+              </header>
+
+              <ul class="lista-faturas" id="lista-faturas"></ul>
+            </div>
+
+          </div>
+
+        </section>
+
+      </main>
+
+    </div>
+
+  </div>
+
+  <script src="javascript/app.js"></script>
+</body>
+</html>

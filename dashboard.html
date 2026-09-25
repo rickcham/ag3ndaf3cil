@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard — AgendaFácil</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="estilos/app.css">
+</head>
+<body class="pagina-app">
+
+  <div class="app-layout">
+
+    <aside class="sidebar">
+      <a href="dashboard.html" class="sidebar-logo">AgendaFácil</a>
+
+      <nav class="sidebar-menu">
+        <a href="dashboard.html" class="menu-item ativo">
+          <span class="menu-icone">▦</span>
+          Dashboard
+        </a>
+        <a href="agenda.html" class="menu-item">
+          <span class="menu-icone">▤</span>
+          Agenda
+        </a>
+        <a href="clientes.html" class="menu-item">
+          <span class="menu-icone">◉</span>
+          Clientes
+        </a>
+        <a href="financa.html" class="menu-item">
+          <span class="menu-icone">✦</span>
+          Finanças
+        </a>
+        <a href="suporte.html" class="menu-item">
+          <span class="menu-icone">◆</span>
+          Suporte
+        </a>
+      </nav>
+
+      <button type="button" class="sidebar-sair" id="btn-sair">Sair</button>
+    </aside>
+
+    <div class="app-conteudo">
+
+      <header class="app-header">
+        <div>
+          <h1 class="app-titulo">Dashboard</h1>
+          <p class="app-subtitulo" id="saudacao">Bem-vindo de volta.</p>
+        </div>
+      </header>
+
+      <main class="app-main">
+
+        <section class="grid-metricas">
+
+          <article class="card-metrica">
+            <span class="card-metrica-label">Agendamentos hoje</span>
+            <strong class="card-metrica-valor">8</strong>
+            <span class="card-metrica-info">+2 em relação a ontem</span>
+          </article>
+
+          <article class="card-metrica">
+            <span class="card-metrica-label">Agendamentos na semana</span>
+            <strong class="card-metrica-valor">42</strong>
+            <span class="card-metrica-info">Tendência estável</span>
+          </article>
+
+          <article class="card-metrica">
+            <span class="card-metrica-label">Receita do mês</span>
+            <strong class="card-metrica-valor">R$ 3.240</strong>
+            <span class="card-metrica-info">+12% em relação ao mês passado</span>
+          </article>
+
+          <article class="card-metrica">
+            <span class="card-metrica-label">Clientes ativos</span>
+            <strong class="card-metrica-valor">127</strong>
+            <span class="card-metrica-info">+5 novos esta semana</span>
+          </article>
+
+        </section>
+
+        <section class="bloco-agendamentos">
+          <header class="bloco-cabecalho">
+            <h2>Próximos agendamentos</h2>
+            <a href="agenda.html" class="link-secundario">Ver agenda completa</a>
+          </header>
+
+          <ul class="lista-agendamentos" id="lista-agendamentos">
+          </ul>
+        </section>
+
+      </main>
+
+    </div>
+
+  </div>
+
+  <script src="javascript/app.js"></script>
+</body>
+</html>

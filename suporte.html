@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Suporte — AgendaFácil</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="estilos/app.css">
+</head>
+<body class="pagina-app">
+
+  <div class="app-layout">
+
+    <aside class="sidebar">
+      <a href="dashboard.html" class="sidebar-logo">AgendaFácil</a>
+
+      <nav class="sidebar-menu">
+        <a href="dashboard.html" class="menu-item"><span class="menu-icone">▦</span> Dashboard</a>
+        <a href="agenda.html" class="menu-item"><span class="menu-icone">▤</span> Agenda</a>
+        <a href="clientes.html" class="menu-item"><span class="menu-icone">◉</span> Clientes</a>
+        <a href="financa.html" class="menu-item"><span class="menu-icone">✦</span> Finanças</a>
+        <a href="suporte.html" class="menu-item ativo"><span class="menu-icone">◆</span> Suporte</a>
+      </nav>
+
+      <button type="button" class="sidebar-sair" id="btn-sair">Sair</button>
+    </aside>
+
+    <div class="app-conteudo">
+
+      <header class="app-header">
+        <div>
+          <h1 class="app-titulo">Suporte</h1>
+          <p class="app-subtitulo">Estamos aqui para ajudar.</p>
+        </div>
+
+        <nav class="abas" data-abas="suporte">
+          <button type="button" class="aba ativa" data-aba="ajuda">Ajuda</button>
+          <button type="button" class="aba" data-aba="chamados">Chamados</button>
+        </nav>
+      </header>
+
+      <main class="app-main">
+
+        <section class="painel-aba ativo" data-painel="ajuda">
+
+          <input type="text" id="busca-suporte" class="form-input busca-grande" placeholder="Busque por dúvida ou palavra-chave">
+
+          <div class="grid-canais">
+            <a href="https://www.instagram.com/agendafacil" class="card-canal" target="_blank" rel="noopener">
+              <span class="canal-icone">IG</span>
+              <div>
+                <h3>Instagram</h3>
+                <p>Acompanhe novidades, dicas e comunicados da empresa.</p>
+              </div>
+            </a>
+
+            <a href="https://wa.me/5511912345678" class="card-canal" target="_blank" rel="noopener">
+              <span class="canal-icone">☎</span>
+              <div>
+                <h3>WhatsApp</h3>
+                <p>Fale com a equipe para dúvidas rápidas e atendimento comercial.</p>
+              </div>
+            </a>
+
+            <a href="https://twitter.com/agendafacil" class="card-canal" target="_blank" rel="noopener">
+              <span class="canal-icone">TW</span>
+              <div>
+                <h3>Twitter</h3>
+                <p>Veja atualizações rápidas, avisos de status e conteúdos recentes.</p>
+              </div>
+            </a>
+          </div>
+
+          <div class="faq-lista compacta" id="faq-lista">
+            <div class="faq-item">
+              <button type="button" class="faq-pergunta">
+                <span>Como faço para criar um agendamento?</span>
+                <span class="faq-icone">+</span>
+              </button>
+              <div class="faq-resposta">
+                <p>Acesse a Agenda na barra lateral, selecione o dia e clique em "Novo agendamento".</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button type="button" class="faq-pergunta">
+                <span>Posso cadastrar mais de um profissional?</span>
+                <span class="faq-icone">+</span>
+              </button>
+              <div class="faq-resposta">
+                <p>Sim. O plano Gratuito permite 1, o Profissional 5, e o Empresarial é ilimitado.</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button type="button" class="faq-pergunta">
+                <span>Como funcionam os lembretes?</span>
+                <span class="faq-icone">+</span>
+              </button>
+              <div class="faq-resposta">
+                <p>São enviados 24h antes do agendamento, por e-mail. Nos planos pagos, também por WhatsApp.</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button type="button" class="faq-pergunta">
+                <span>Posso cancelar minha assinatura?</span>
+                <span class="faq-icone">+</span>
+              </button>
+              <div class="faq-resposta">
+                <p>Sim, sem multa, a qualquer momento em Finanças.</p>
+              </div>
+            </div>
+          </div>
+
+        </section>
+
+        <section class="painel-aba" data-painel="chamados">
+
+          <div class="layout-chamados">
+
+            <div class="coluna-chamados">
+              <header class="bloco-cabecalho">
+                <h2>Meus chamados</h2>
+                <span class="link-secundario" id="contador-chamados">0 abertos</span>
+              </header>
+              <ul class="lista-tickets" id="lista-tickets"></ul>
+            </div>
+
+            <div class="coluna-form">
+              <header class="bloco-cabecalho">
+                <h2>Abrir novo chamado</h2>
+              </header>
+
+              <form id="form-suporte" class="form-suporte">
+                <div class="form-grupo">
+                  <label for="assunto">Assunto</label>
+                  <input type="text" id="assunto" class="form-input" placeholder="Ex: Problema ao criar agendamento">
+                </div>
+
+                <div class="form-grupo">
+                  <label for="categoria">Categoria</label>
+                  <select id="categoria" class="form-input">
+                    <option value="tecnico">Problema técnico</option>
+                    <option value="financeiro">Financeiro</option>
+                    <option value="duvida">Dúvida</option>
+                    <option value="sugestao">Sugestão</option>
+                  </select>
+                </div>
+
+                <div class="form-grupo">
+                  <label for="descricao">Descrição</label>
+                  <textarea id="descricao" class="form-input" rows="3" placeholder="Descreva o que está acontecendo."></textarea>
+                </div>
+
+                <p id="mensagem-suporte" class="mensagem-erro"></p>
+
+                <button type="submit" class="btn-primario btn-bloco">Enviar chamado</button>
+              </form>
+            </div>
+
+          </div>
+
+        </section>
+
+      </main>
+
+    </div>
+
+  </div>
+
+  <script src="javascript/app.js"></script>
+</body>
+</html>

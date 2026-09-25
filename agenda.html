@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agenda — AgendaFácil</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="estilos/app.css">
+</head>
+<body class="pagina-app">
+
+  <div class="app-layout">
+
+    <aside class="sidebar">
+      <a href="dashboard.html" class="sidebar-logo">AgendaFácil</a>
+
+      <nav class="sidebar-menu">
+        <a href="dashboard.html" class="menu-item">
+          <span class="menu-icone">▦</span>
+          Dashboard
+        </a>
+        <a href="agenda.html" class="menu-item ativo">
+          <span class="menu-icone">▤</span>
+          Agenda
+        </a>
+        <a href="clientes.html" class="menu-item">
+          <span class="menu-icone">◉</span>
+          Clientes
+        </a>
+        <a href="financa.html" class="menu-item">
+          <span class="menu-icone">✦</span>
+          Finanças
+        </a>
+        <a href="suporte.html" class="menu-item">
+          <span class="menu-icone">◆</span>
+          Suporte
+        </a>
+      </nav>
+
+      <button type="button" class="sidebar-sair" id="btn-sair">Sair</button>
+    </aside>
+
+    <div class="app-conteudo">
+
+      <header class="app-header">
+        <div>
+          <h1 class="app-titulo">Agenda</h1>
+          <p class="app-subtitulo">Selecione um dia para ver os agendamentos.</p>
+        </div>
+        <button type="button" class="btn-primario" id="btn-novo">Novo agendamento</button>
+      </header>
+
+      <main class="app-main">
+
+        <div class="agenda-layout">
+
+          <section class="bloco-calendario">
+            <header class="calendario-cabecalho">
+              <button type="button" class="btn-nav" id="btn-mes-anterior">◀</button>
+              <h2 id="calendario-titulo">Outubro 2024</h2>
+              <button type="button" class="btn-nav" id="btn-mes-proximo">▶</button>
+            </header>
+
+            <div class="calendario-grade">
+              <span class="calendario-dia-semana">D</span>
+              <span class="calendario-dia-semana">S</span>
+              <span class="calendario-dia-semana">T</span>
+              <span class="calendario-dia-semana">Q</span>
+              <span class="calendario-dia-semana">Q</span>
+              <span class="calendario-dia-semana">S</span>
+              <span class="calendario-dia-semana">S</span>
+            </div>
+
+            <div class="calendario-grade" id="calendario-dias"></div>
+          </section>
+
+          <section class="bloco-dia">
+            <header class="bloco-cabecalho">
+              <h2 id="titulo-dia">Agendamentos do dia</h2>
+              <button type="button" class="btn-secundario btn-pequeno" id="btn-ver-todos">Ver todos</button>
+            </header>
+
+            <ul class="lista-agendamentos" id="lista-dia">
+              <!-- preenchido pelo JavaScript -->
+            </ul>
+          </section>
+
+        </div>
+
+      </main>
+
+    </div>
+
+  </div>
+
+  <!-- MODAL DE NOVO AGENDAMENTO -->
+  <div class="modal-fundo" id="modal-fundo">
+    <div class="modal">
+      <header class="modal-cabecalho">
+        <h2>Novo agendamento</h2>
+        <button type="button" class="btn-fechar" id="btn-fechar">✕</button>
+      </header>
+
+      <form id="form-agendamento" class="modal-form">
+        <div class="form-grupo">
+          <label for="cliente">Cliente cadastrado</label>
+          <select id="cliente" class="form-input">
+            <option value="">Nenhum cliente selecionado</option>
+          </select>
+        </div>
+
+        <div class="form-grupo">
+          <label for="nome">Nome do cliente</label>
+          <input type="text" id="nome" class="form-input" placeholder="Ex: Mariana Silva">
+        </div>
+
+        <div class="form-grupo">
+          <label for="servico">Serviço</label>
+          <input type="text" id="servico" class="form-input" placeholder="Ex: Corte de cabelo">
+        </div>
+
+        <div class="form-grupo">
+          <label for="horario">Horário</label>
+          <input type="time" id="horario" class="form-input" value="09:00">
+        </div>
+
+        <p id="mensagem-erro-modal" class="mensagem-erro"></p>
+
+        <div class="modal-acoes">
+          <button type="button" class="btn-secundario" id="btn-cancelar">Cancelar</button>
+          <button type="submit" class="btn-primario">Salvar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="javascript/app.js"></script>
+</body>
+</html>
